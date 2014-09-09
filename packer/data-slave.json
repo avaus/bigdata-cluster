@@ -1,0 +1,42 @@
+{
+  "builders": [{
+    "type": "amazon-ebs",
+    "ami_name": "data-slave {{isotime | clean_ami_name}}",
+    "ami_description": "Slave machine image for big-data cluster. Requires that you set data-master to /etc/hosts.",
+    "region": "eu-west-1",
+    "source_ami": "ami-ec50a19b",
+    "instance_type": "t1.micro",
+    "ssh_username": "ubuntu",
+    "tags": {
+      "Name": "data-slave",
+      "Created": "{{isotime | clean_ami_name}}"
+    },
+    "ssh_timeout": "15m"
+  }],
+
+  "provisioners": [{
+    "type": "chef-solo",
+    "run_list": [
+      "role[common]",
+      "role[hadoop-slave]"
+    ],
+	  "execute_command": "{{if .Sudo}}sudo {{end}}chef-solo --no-color -c /tmp/packer-chef-solo/solo.rb -j /tmp/packer-chef-solo/node.json",
+
+    "roles_path": "provision/roles",
+    "json": {
+      "hadoop": {
+        "namenode": {
+          "host": "data-master"
+        },
+        "resourcemanager": {
+          "host": "data-master"
+        }
+      }
+    },
+
+    "cookbook_paths": [
+      "berks-cookbooks",
+      "provision/cookbooks"
+    ]
+  }]
+}

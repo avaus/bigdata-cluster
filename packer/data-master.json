@@ -1,0 +1,41 @@
+{
+  "builders": [{
+    "type": "amazon-ebs",
+    "ami_name": "data-master {{isotime | clean_ami_name}}",
+    "ami_description": "Master machine image for big-data cluster.",
+    "region": "eu-west-1",
+    "source_ami": "ami-ec50a19b",
+    "instance_type": "t1.micro",
+    "ssh_username": "ubuntu",
+    "tags": {
+      "Name": "data-master",
+      "Created": "{{isotime | clean_ami_name}}"
+    },
+    "ssh_timeout": "15m"
+  }],
+
+  "provisioners": [{
+    "type": "chef-solo",
+    "run_list": [
+      "role[common]",
+      "role[hadoop-master]",
+      "role[hive]",
+      "role[hue]"
+    ],
+	  "execute_command": "{{if .Sudo}}sudo {{end}}chef-solo --no-color -c /tmp/packer-chef-solo/solo.rb -j /tmp/packer-chef-solo/node.json",
+
+    "roles_path": "provision/roles",
+
+    "json": {
+      "hadoop" : {
+        "permissions" : false,
+        "rpc_bind_host" : "0.0.0.0"
+      }
+    },
+
+    "cookbook_paths": [
+      "berks-cookbooks",
+      "provision/cookbooks"
+    ]
+  }]
+}

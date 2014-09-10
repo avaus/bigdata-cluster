@@ -18,7 +18,7 @@ This contains:
 - [Hue](http://gethue.com/) Web UI
 - [Solr](https://lucene.apache.org/solr/) Search in Hue UI **[not included yet]**
 
-In this version, the cluster has one master (named â€˜data-masterâ€™) and one slave (named â€˜data-slaveâ€™) builders. When running locally, there will be 1 master node and 1 slave node. When running on Amazon, we can build one master node and n slave node(s). 
+In this version, the cluster has one master (named 'data-master') and one slave (named 'data-slave') builders. When running locally, there will be 1 master node and 1 slave node. When running on Amazon, we can build one master node and n slave node(s). 
 
 # 2. Setup the environment
 
@@ -304,3 +304,7 @@ License and Authors
 -------------------
 Authors: [Erno Aapa](https://github.com/eaapa), Kimi Ylilammi, [Hung Ta](https://github.com/hungtx)
 License: [MIT](http://opensource.org/licenses/MIT)
+
+## 5. Examples
+
+Examples of running Hadoop scripts on this bigdata cluster can be found in [GitHub](https://github.com/avaus/bigdata-examples).

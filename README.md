@@ -1,5 +1,5 @@
 # Note
-This guidance is meant for Linux environment
+This guide is meant for Linux environment. It has been tested on OS X 10.9.4 also.
 
 # 1. The Avaus BigData cluster in nutshell
 
@@ -18,15 +18,15 @@ This contains:
 - [Hue](http://gethue.com/) Web UI
 - [Solr](https://lucene.apache.org/solr/) Search in Hue UI **[not included yet]**
 
-In this version, the cluster has one master (names ‘data-master’) and one slave (named ‘data-slave’) builders. When running locally, there will be 1 master node and 1 slave node. When running on Amazon, we can build one master node and n slave node(s). 
+In this version, the cluster has one master (named â€˜data-masterâ€™) and one slave (named â€˜data-slaveâ€™) builders. When running locally, there will be 1 master node and 1 slave node. When running on Amazon, we can build one master node and n slave node(s). 
 
-# 2. Setup environment
+# 2. Setup the environment
 
 ### Install Ruby
-It is recommended to use RVM (Ruby Version Manager). For more details how to install Ruby, please see [here](https://www.ruby-lang.org/en/installation)
+It is recommended to use RVM (Ruby Version Manager). For more details how to install Ruby, please see [here](https://www.ruby-lang.org/en/installation).
 
 ### Install Bundler
-Bundler provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed. Open a terminal window and run this command
+Bundler provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed. Open a terminal window and run this command:
 
 ```bash
 $ gem install bundler
@@ -37,13 +37,13 @@ Vagrant provides easy to configure, reproducible, and portable work environments
 VirtualBox must be installed on its own prior to using the provider, or the provider will display an error message asking you to install it. VirtualBox can be installed by [downloading](https://www.virtualbox.org/wiki/Downloads) a package or installer for your operating system and using standard procedures to install that package.
 
 #### Install vagrant-omnibus plugin
-This plugin ensures the desired verion of Chef. This proves very useful when using Vagrant with provisioner-less baseboxes OR cloud images. Run this command
+This plugin ensures the desired verion of Chef. This proves very useful when using Vagrant with provisioner-less baseboxes OR cloud images. Run this command:
 
 ```bash
 $ vagrant plugin install vagrant-omnibus
 ```
 
-Note: this needs nokogiri gem. So try to install nokogiri gem or add ```s.add_dependency(%q<nokogiri>, ["= 1.6.2.1"])``` to ```/Applications/Vagrant/embedded/gems/specifications/vagrant-1.6.3.gemspec```.
+Note: this needs the nokogiri gem. So either [install nokogiri](http://nokogiri.org/tutorials/installing_nokogiri.html) gem or add ```s.add_dependency(%q<nokogiri>, ["= 1.6.2.1"])``` to ```/Applications/Vagrant/embedded/gems/specifications/vagrant-1.6.3.gemspec```.
 
 
 ### Install Berkshelf
@@ -58,31 +58,31 @@ Or add Berkshelf to your repository's Gemfile:
 gem 'berkshelf'
 ```
 
-Visit [here](http://berkshelf.com/index.html) to know more about installing Berkshelf
+Visit [here](http://berkshelf.com/index.html) to know more about installing Berkshelf.
 
 ### Install Packer
 Packer is a tool for creating identical machine images from a single source configuration. With Packer, we can easily build images for Amazon EC2, DigitalOcean, VirtualBox and VMware. Visit [here](http://www.packer.io/docs/installation.html) to install Packer.
 
 ### Misc
-Other tools might be needed such as [Git](http://git-scm.com/book/en/Getting-Started-Installing-Git) ...
+Other tools might be needed such as [Git](http://git-scm.com/book/en/Getting-Started-Installing-Git).
 
 # 3. Deployment
 
 ## 3.1. Get source code
-The source code of the Avaus BigData cluster is at Git hub: …..
+The source code of the Avaus BigData cluster is available at [GitHub](https://github.com/avaus/bigdata-cluster).
 
 
 ## 3.2. Run locally
-In this mode, there are 1 master and 1 slave.
+In this mode, there is 1 master and 1 slave.
 
 ### Update cookbooks
-In the project folder, run this command 
+In the project folder, run this command:
 
 ```bash
 berks update
 berks vendor
 ```
-Cookbooks will be in berks-cookbooks folder. If there exists berks-cookbooks folder and you want to renew it, remember to remove the folder
+Cookbooks will be in berks-cookbooks folder. If the 'berks-cookbooks' folder already exists, and you want to renew it, remember to remove the folder:
 
 ```bash
 berks update
@@ -90,13 +90,13 @@ rm -r berks-cookbooks
 berks vendor
 ```
 
-Now we can start the machines. In the project folder, run this command 
+Now we can start the machines. In the project folder, run this command:
 
 ```bash
 vagrant up
 ```
 
-It the first time, this command builds the machines. After that, this command is to turn on the machines. Please visit [Vagrant’s website](https://docs.vagrantup.com/v2/getting-started/index.html) to learn how to stop or destroy machines and other stuffs. 
+It the first time, this command builds the machines. After that, this command is to turn on the machines. Please visit [Vagrantâ€™s website](https://docs.vagrantup.com/v2/getting-started/index.html) to learn how to etc. suspend, halt and destroy machines. 
 When the building is completed (for the first time of running vagrant up) or the machines are turned one, you can access 
 
 - Hue Web UI at http://data-master-ip:8888
@@ -298,11 +298,6 @@ We can specify all dependencies in the repository's Gemfile and install them by 
 ```bash
 $ bundle install
 ```
-
-# 5. Examples
-
-There are couple of examples of running Hadoop scripts in this bigdata-cluster. These done by Juuso Parkinen at Avaus Consulting Oy
-https://github.com/avaus/bigdata-examples
 
 
 License and Authors

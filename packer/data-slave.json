@@ -17,8 +17,7 @@
   "provisioners": [{
     "type": "chef-solo",
     "run_list": [
-      "role[common]",
-      "role[hadoop-slave]"
+      "role[common]"
     ],
 	  "execute_command": "{{if .Sudo}}sudo {{end}}chef-solo --no-color -c /tmp/packer-chef-solo/solo.rb -j /tmp/packer-chef-solo/node.json",
 

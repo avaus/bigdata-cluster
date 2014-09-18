@@ -1,8 +1,10 @@
 name "r"
 description "R installation"
 
+# Install R
 run_list "recipe[r::default]"
-# run_list "recipe[r::install_r-packages]"
+# Install packages listed in this recipe
+run_list "recipe[r::install_r-packages]"
 
 override_values = {
   'platform_family' => 'ubuntu',

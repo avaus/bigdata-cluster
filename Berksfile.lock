@@ -4,7 +4,7 @@ DEPENDENCIES
     revision: b40c122e82edbc998f95a2fefd88c619af441b86
   hadoop
     git: https://github.com/avaus/hadoop-cookbook.git
-    revision: 8ff28e90dbadc5122fc0ca3d530433df14fa1b0c
+    revision: 83d3a9b3dbbfc543900efc020b9f775891f72679
   hive
     git: https://github.com/avaus/hive-cookbook.git
     revision: 02ea5b7fccd052280c60224a7221d02a87b1755a
@@ -13,7 +13,7 @@ DEPENDENCIES
     revision: 39e26614ed3b325c47753215fedcd1d416747939
   java
     git: https://github.com/socrata-cookbooks/java.git
-    revision: 6a55b8ad377c408687a5a82d55e6b27347180626
+    revision: e4b2520fc6598d0f830443c5176c18c4122406f7
   maven
     git: https://github.com/opscode-cookbooks/maven.git
     revision: 544ad33665b543f3be92cbff20463bb522ffac97
@@ -97,9 +97,9 @@ GRAPH
     yum-epel (>= 0.0.0)
   sysctl (0.6.0)
     ohai (>= 0.0.0)
-  windows (1.34.2)
+  windows (1.34.6)
     chef_handler (>= 0.0.0)
-  yum (3.3.1)
+  yum (3.3.2)
   yum-epel (0.5.1)
     yum (~> 3.0)
   zookeeper (2.4.3)

@@ -24,19 +24,9 @@
 
     "roles_path": "provision/roles",
     "json": {
-      "hadoop": {
-        "namenode": {
-          "host": "data-master"
-        },
-        "resourcemanager": {
-          "host": "data-master"
-        }
-      }
     },
-
     "cookbook_paths": [
-      "berks-cookbooks",
-      "provision/cookbooks"
+      "berks-cookbooks"
     ]
   }]
 }

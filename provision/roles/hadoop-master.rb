@@ -11,25 +11,24 @@ override_values = {
       'hadoop.proxyuser.hue.hosts' => '*',
       'hadoop.proxyuser.hue.groups' => '*'
     },
-   'namenode' => {
+    'permissions'  =>  true,
+    'rpc_bind_host'  =>  '0.0.0.0',
+    'namenode' => {
       'host' => 'data-master',
       'tracker' => 'data-master:54311'
     },
-   'resourcemanager' => {
+    'resourcemanager' => {
       'host' => 'data-master'
     },
-   'datanode' => {
+    'datanode' => {
       'data_dir' => '/opt/hadoop/datanode/'
     },
-   'namenode' => {
+    'namenode' => {
       'name_dir' => '/opt/hadoop/namenode/'
     },
     'mapreduce' => {
       'framework' => 'yarn'
     }
-  },
-  'mahout' => {
-    'hadoop2_version' => '2.4.0'
   }
 }
 

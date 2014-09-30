@@ -194,7 +194,7 @@ First you need to start the master node.
 9. If step 4 was not done yet, we have to access to the data-master and manually add the data master node's IP address to etc/hosts. Then restart namenode and resourcemanager services.
 
 ```bash
-sudo sh -c "echo 'something' >> /etc/privilegedfile"
+sudo sh -c "echo 'x.x.x.x data-master' >> /etc/hosts"
 sudo service namenode restart
 sudo service resourcemanager restart
 

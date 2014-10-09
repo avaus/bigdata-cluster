@@ -103,6 +103,8 @@ When the building is completed (for the first time of running vagrant up) or the
 - Hadoop Administration at http://data-master-ip:50070
 - MapReduce information at http://data-master-ip:8088
 
+The data-master-ip is set in the Vagrantfile, and is 192.168.60.2 by default.
+
 ### To access server through SSH
 #### Master server
 
@@ -249,9 +251,18 @@ sudo service nodemanager restart
 Now you can try to go to [http://master-ip-address:50070](http://master-ip-address:50070) Hadoop UI and verify that the master can see the slave machine.
 Also you should be able to login to Hue [http://master-ip-address:8888](http://master-ip-address:8888) (use for example 'hue' username). From Hue, you can browse the HDFS, work with Hive and visualize the query results. See [here](http://gethue.com/) to learn how to use Hue.
 
+You will see the master-ip-address (public DNS) in the Amazon EC2 console.
+
 In [http://master-ip-address:8088](http://master-ip-address:8088), you can monitor the mapreduce jobs.
 
 ### 3.3.6. To access server through SSH
+
+You have to include the .pem file obtained from Amazon to access the data master server. An example ssh command to access the server:
+
+```bash
+#!/bin/bash
+ssh -i Amazon.pem ubuntu@ec2-12-34-567-890.eu-west-1.compute.amazonaws.com
+```
 
 Login to the master server and slaves using user 'ubuntu'. You can then switch to 'hadoop' user to run scripts in Hadoop
 

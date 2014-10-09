@@ -1,8 +1,9 @@
 name "rstudio"
 description "RStudio installation"
 
-run_list "recipe[rstudio::server]"
-run_list "recipe[rstudio::shiny]"
+# Install RStudio Server and Shiny Server
+run_list "recipe[rstudio::server]",
+         "recipe[rstudio::shiny]"
 
 
 override_values = {

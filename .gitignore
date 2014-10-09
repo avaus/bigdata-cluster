@@ -2,6 +2,6 @@
 berks-cookbooks
 .vagrant
 .DS_Store
-
-
-
+.Rproj.user
+.Rhistory
+bigdata-cluster.Rproj

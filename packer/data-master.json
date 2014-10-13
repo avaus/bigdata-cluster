@@ -4,14 +4,14 @@
     "ami_name": "data-master {{isotime | clean_ami_name}}",
     "ami_description": "Master machine image for big-data cluster.",
     "region": "eu-west-1",
-    "source_ami": "ami-ec50a19b",
+    "source_ami": "ami-f6b11181",
     "instance_type": "t1.micro",
     "ssh_username": "ubuntu",
     "tags": {
       "Name": "data-master",
       "Created": "{{isotime | clean_ami_name}}"
     },
-    "ssh_timeout": "15m"
+    "ssh_timeout": "30m"
   }],
 
   "provisioners": [{
@@ -19,8 +19,7 @@
     "run_list": [
       "role[common]",
       "role[hadoop-master]",
-      "role[hive]",
-      "role[hue]"
+      "role[hive]"
     ],
 	  "execute_command": "{{if .Sudo}}sudo {{end}}chef-solo --no-color -c /tmp/packer-chef-solo/solo.rb -j /tmp/packer-chef-solo/node.json",
 

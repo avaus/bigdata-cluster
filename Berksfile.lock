@@ -13,7 +13,10 @@ DEPENDENCIES
     revision: 39e26614ed3b325c47753215fedcd1d416747939
   java
     git: https://github.com/socrata-cookbooks/java.git
-    revision: e4b2520fc6598d0f830443c5176c18c4122406f7
+    revision: 896315a066f1b0d19be457b6d2700f0fd6d0083b
+  mahout
+    git: http://gitlab.avaus.fi/avaus-chef/mahout-cookbook.git
+    revision: bf58ba0630236082cf2b59bc2619b8f4f11a066f
   maven
     git: https://github.com/opscode-cookbooks/maven.git
     revision: 544ad33665b543f3be92cbff20463bb522ffac97
@@ -27,6 +30,11 @@ DEPENDENCIES
 GRAPH
   7-zip (1.0.2)
     windows (>= 1.2.2)
+  apache2 (1.11.0)
+    freebsd (>= 0.0.0)
+    iptables (>= 0.0.0)
+    logrotate (>= 0.0.0)
+    pacman (>= 0.0.0)
   apt (2.6.0)
   ark (0.9.0)
     7-zip (>= 0.0.0)
@@ -53,7 +61,8 @@ GRAPH
     runit (>= 0.0.0)
     sysctl (>= 0.0.0)
     yum-epel (>= 0.0.0)
-  dpkg_autostart (0.1.10)
+  dpkg_autostart (0.1.12)
+  freebsd (0.1.10)
   git (4.0.2)
     build-essential (>= 0.0.0)
     dmg (>= 0.0.0)
@@ -77,9 +86,19 @@ GRAPH
     java (>= 0.0.0)
     maven (>= 0.0.0)
   iptables (0.14.0)
+  iptables-ng (2.2.0)
   java (1.28.0)
-  lxc (1.1.8)
-    dpkg_autostart (~> 0.1.10)
+  logrotate (1.7.0)
+  lxc (2.0.0)
+    dpkg_autostart (>= 0.1.10)
+    iptables-ng (>= 0.0.0)
+    polipo (>= 0.0.0)
+  mahout (0.1.0)
+    apt (>= 0.0.0)
+    ark (>= 0.0.0)
+    java (>= 0.0.0)
+    maven (>= 0.0.0)
+    subversion (>= 0.0.0)
   maven (1.1.1)
     ark (~> 0.4)
     java (~> 1.13)
@@ -91,10 +110,15 @@ GRAPH
     zookeeper (>= 0.0.0)
   modules (0.2.0)
   ohai (2.0.1)
+  pacman (1.1.1)
+  polipo (0.1.0)
   runit (1.5.10)
     build-essential (>= 0.0.0)
     yum (~> 3.0)
     yum-epel (>= 0.0.0)
+  subversion (1.1.2)
+    apache2 (~> 1.7)
+    windows (~> 1.10)
   sysctl (0.6.0)
     ohai (>= 0.0.0)
   windows (1.34.6)

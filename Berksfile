@@ -11,4 +11,5 @@ cookbook 'hue', :git => 'https://github.com/avaus/hue-cookbook.git'
 
 cookbook 'maven', :git => 'https://github.com/opscode-cookbooks/maven.git'
 #cookbook 'mahout', :path => 'provision/cookbooks/mahout'
+cookbook 'mahout', :git => 'http://gitlab.avaus.fi/avaus-chef/mahout-cookbook.git'
 #cookbook 'hive', :path => 'provision/cookbooks/hive'

@@ -5,6 +5,9 @@ run_list "recipe[hadoop::datanode]",
 				 "recipe[hadoop::nodemanager]"
 
 override_values = {
+  'java' => {
+    'jdk_version' => '7'
+  },
   'hadoop' => {
     'webhdfs' => true,
     'core_configs' => {
@@ -12,6 +15,7 @@ override_values = {
       'hadoop.proxyuser.hue.groups' => '*'
     },
    'namenode' => {
+      'name_dir' => '/opt/hadoop/namenode',
       'host' => 'data-master',
       'tracker' => 'data-master:54311'
     },
@@ -19,10 +23,7 @@ override_values = {
       'host' => 'data-master'
     },
    'datanode' => {
-      'data_dir' => 'opt/hadoop/datanode/'
-    },
-   'namenode' => {
-      'name_dir' => 'opt/hadoop/namenode/'
+      'data_dir' => '/opt/hadoop/datanode'
     },
     'mapreduce' => {
       'framework' => 'yarn'

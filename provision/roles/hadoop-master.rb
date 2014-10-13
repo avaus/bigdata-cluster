@@ -5,6 +5,9 @@ run_list  "recipe[hadoop::namenode]",
           "recipe[hadoop::resourcemanager]"
 
 override_values = {
+  'java' => {
+    'jdk_version' => '7'
+  },
   'hadoop' => {
     'webhdfs' => true,
     'core_configs' => {
@@ -14,6 +17,7 @@ override_values = {
     'permissions'  =>  true,
     'rpc_bind_host'  =>  '0.0.0.0',
     'namenode' => {
+      'name_dir' => '/opt/hadoop/namenode',
       'host' => 'data-master',
       'tracker' => 'data-master:54311'
     },
@@ -21,10 +25,7 @@ override_values = {
       'host' => 'data-master'
     },
     'datanode' => {
-      'data_dir' => '/opt/hadoop/datanode/'
-    },
-    'namenode' => {
-      'name_dir' => '/opt/hadoop/namenode/'
+      'data_dir' => '/opt/hadoop/datanode'
     },
     'mapreduce' => {
       'framework' => 'yarn'

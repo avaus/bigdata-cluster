@@ -19,7 +19,9 @@
     "run_list": [
       "role[common]",
       "role[hadoop-master]",
-      "role[hive]"
+      "role[hive]",
+      "role[r]",
+      "role[rstudio]"
     ],
 	  "execute_command": "{{if .Sudo}}sudo {{end}}chef-solo --no-color -c /tmp/packer-chef-solo/solo.rb -j /tmp/packer-chef-solo/node.json",
 

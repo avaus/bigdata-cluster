@@ -18,7 +18,8 @@ This contains:
 - [Hue](http://gethue.com/) Web UI **[not working yet]**
 - [Solr](https://lucene.apache.org/solr/) Search in Hue UI **[not included yet]**
 - [R](http://www.r-project.org/), [RStudio](http://www.rstudio.com/), and [Shiny](http://shiny.rstudio.com/) Machine learning
-In this version, the cluster has one master (named 'data-master') and one slave (named 'data-slave') builders. When running locally, there will be 1 master node and 1 slave node. When running on Amazon, you can build one master node and n slave node(s). 
+
+In this version, the cluster has one master (named 'data-master') and one slave (named 'data-slave') builders. When running locally, there will be 1 master node and 1 slave node. When running on Amazon, you can build one master node and n slave node(s).
 
 # 2. Setup the environment
 

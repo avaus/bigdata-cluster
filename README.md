@@ -15,9 +15,9 @@ This contains:
 - [Spark](https://spark.incubator.apache.org/) Cluster computing **[not included yet]**
 - [Mahout](https://mahout.apache.org/) Machine learning **[not included yet]**
 - [Sqoop](http://sqoop.apache.org/) Transfer bulk data from/to databases **[not included yet]**
-- [Hue](http://gethue.com/) Web UI
+- [Hue](http://gethue.com/) Web UI **[not working yet]**
 - [Solr](https://lucene.apache.org/solr/) Search in Hue UI **[not included yet]**
-
+- [R](http://www.r-project.org/), [RStudio](http://www.rstudio.com/), and [Shiny](http://shiny.rstudio.com/) Machine learning
 In this version, the cluster has one master (named 'data-master') and one slave (named 'data-slave') builders. When running locally, there will be 1 master node and 1 slave node. When running on Amazon, you can build one master node and n slave node(s). 
 
 # 2. Setup the environment
@@ -352,4 +352,4 @@ License: [MIT](http://opensource.org/licenses/MIT)
 
 ## 5. Examples
 
-Examples of running Hadoop scripts on this bigdata cluster can be found in [GitHub](https://github.com/avaus/bigdata-examples).
+Examples of running Hadoop scripts, R, H2O, and other stuff on this bigdata cluster can be found in [GitHub](https://github.com/avaus/bigdata-examples).
